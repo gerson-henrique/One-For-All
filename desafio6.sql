@@ -1,7 +1,7 @@
-SELECT MIN(plans.price) as "faturamento_minimo",
-   MAX(plans.price) as "faturamento_maximo",
+SELECT ROUND(MIN(plans.price),2) as "faturamento_minimo",
+   ROUND(MAX(plans.price),2) as "faturamento_maximo",
   ROUND(AVG(plans.price),2)  as "faturamento_medio",
-  SUM(plans.price) as "faturamento_total"
+  ROUND(SUM(plans.price),2) as "faturamento_total"
 FROM plans
 JOIN assingments as assingments
 ON assingments.plan_id = plans.id;
