@@ -1,4 +1,4 @@
-SELECT songs.name as nome, COUNT(songs.name) as reproduções
+SELECT songs.name as nome, COUNT(songs.name) as reproducoes
 FROM songs as songs
 JOIN history as history
 ON history.song_id = songs.id

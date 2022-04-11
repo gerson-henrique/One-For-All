@@ -7,4 +7,5 @@ SELECT songs.name as nome_musica,
     WHEN songs.name LIKE "%Circus" THEN REPLACE(songs.name,"Circus","Pull Request")
   END AS novo_nome
 FROM songs as songs
-  HAVING novo_nome IS NOT NULL;
+  HAVING novo_nome IS NOT NULL
+  ORDER BY songs.name;
