@@ -1,4 +1,4 @@
-SELECT songs.name, 
+SELECT songs.name as nome_musica, 
   CASE 
     WHEN songs.name LIKE "%Streets" THEN REPLACE(songs.name,"Streets","Code Review")
     WHEN songs.name LIKE "%Her Own" THEN REPLACE(songs.name,"Her Own","Trybe")

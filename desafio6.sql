@@ -4,4 +4,4 @@ SELECT MIN(plans.price) as "faturamento_minimo",
   SUM(plans.price) as "faturamento_total"
 FROM plans
 JOIN assingments as assingments
-ON assingments.plan_id = plans.id
+ON assingments.plan_id = plans.id;
