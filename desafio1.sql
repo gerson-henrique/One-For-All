@@ -11,7 +11,10 @@ CREATE TABLE SpotifyClone.plans(
 CREATE TABLE SpotifyClone.users(
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(35) NOT NULL,
-    age TINYINT NOT NULL
+    age TINYINT NOT NULL,
+    plan_id INT NOT NULL,
+    assing_date DATE NOT NULL,
+    FOREIGN KEY (plan_id) REFERENCES plans(id)
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.assingments(
@@ -69,18 +72,18 @@ VALUES
   ('pessoal',6.99 ),
   ('familiar', 7.99);
 
-INSERT INTO SpotifyClone.users (name, age)
+INSERT INTO SpotifyClone.users (name, age,plan_id,assing_date)
 VALUES
-  ('Thati', 23),
-  ('Cintia', 35),
-  ('Bill', 20),
-  ('Roger', 45),
-  ('Norman', 58),
-  ('Patrick', 33),
-  ('Vivian', 26),
-  ('Carol', 19),
-  ('Angelina', 42),
-  ('Paul', 46);
+  ('Thati', 23    ,1,"2019-10-20" ),
+  ('Cintia', 35   ,4,"2017-12-30" ),
+  ('Bill', 20     ,2,"2019-06-05" ),
+  ('Roger', 45    ,3,"2020-05-13" ),
+  ('Norman', 58   ,3,"2017-02-17" ),
+  ('Patrick', 33  ,4,"2017-01-06" ),
+  ('Vivian', 26   ,2,"2018-01-05" ),
+  ('Carol', 19    ,2,"2018-02-14" ),
+  ('Angelina', 42 ,4,"2018-04-29" ),
+  ('Paul', 46     ,4,"2017-01-17" );
 
 INSERT INTO SpotifyClone.assingments (user_id, plan_id,assing_date)
 VALUES 
